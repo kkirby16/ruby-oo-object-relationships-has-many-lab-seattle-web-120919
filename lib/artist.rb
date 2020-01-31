@@ -5,9 +5,7 @@ class Artist
 
   def initialize(name)
     @name = name
-
-    #binding.pry
-  end #you only can call classes on class methods.
+  end
 
   def songs
     Song.all
@@ -18,13 +16,13 @@ class Artist
     #binding.pry
   end
 
-  def add_song_by_name(song)
-    song = Song.new(song)
-    song.artist = self
+  def add_song_by_name(song_name)
+    new_song = Song.new(song_name)
+    new_song.artist = self
+    #binding.pry
   end
 
   def self.song_count
     Song.all.count
-    # binding.pry
-  end
+  end  #call class methods with the class
 end

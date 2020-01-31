@@ -1,21 +1,12 @@
-require "pry"
-
 class Author
   attr_accessor :name
 
   def initialize(name)
     @name = name
-    @@all = []
-  end
-
-  def self.all
-    @@all
   end
 
   def add_post(post)
     post.author = self
-
-    #binding.pry
     #binding.pry
   end
 
@@ -24,8 +15,8 @@ class Author
   end
 
   def add_post_by_title(post_title)
-    post2 = Post.new(post_title)
-    post2.author = self
+    post1 = Post.new(post_title)
+    post1.author = self
   end
 
   def self.post_count
